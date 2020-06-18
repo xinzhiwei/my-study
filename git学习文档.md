@@ -43,8 +43,15 @@ git branch -d **
 
 ## 提交代码到github（当作git服务器来用）
 ## git push 远程仓库地址 远程仓库分支 第一次使用需要输入github账号密码
-git push https://github.com/***** master   // 当前代码上传到远程的master分支上面  
++ 示例：`git push https://github.com/xinzhiwei/my-study.git  master`   // 当前代码上传到远程的master分支上面  
 
 ## 获取远程仓库的代码 
 ## git pull 远程地址 远程仓库分支
-git pull https://github.com/*** master
++ 示例：`git pull https://github.com/xinzhiwei/my-study.git  master `
++ 会把远程分支的数据得到:(*注意本地--要初始化一个仓库*) 会合并不会想git clone一样覆盖本地数据
+
+## git clone 远程仓库地址  第一次拉代码的时候会使用
+- `git clone [地址]`
++ 会得到远程仓库相同的数据，如果多次执行会覆盖本地内容
+
+
