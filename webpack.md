@@ -21,3 +21,11 @@
        ## 2. webpack 就会去项目的根目录中查找webpack.config.js 的配置文件
        ## 3. 当找到配置文件后，webpack 会去解析执行这个配置文件，当解析执行完配置文件后，就得到了配置文件中导出的配置对象
        ## 4. 当webpack 拿到 配置对象后，就拿到了配置对象中指的入口和出口，然后进行打包构建
+
+   ## 使用 webpack-dev-server 工具 来实现自动打包编译的功能    
+      - `1. 运行 npm i webpack-dev-server -D 把这个工具安装到项目的本地开发依赖上`
+      - `2.  安装完毕后，这个工具的用法，和webpack 命令的用法完全一样`
+      - `3. 由于我们是在项目中（即本地）上安装的webpack-dev-server，所以无法把它当做脚本命令在powershell 终端中直接运行；（只有那些安装到全局 -g的工具才可以在终端执行）`
+      - `4. 注意： webpack-dev-server 这个工具，如果想正常运行，要求： 在本地项目中必须安装webpack`
+      - `5. webpack-dev-server 帮我们打包生成的bundle.js 文件并没有存放到实际的物流磁盘上面，而是直接托管到了电脑的内存中，所以我们在项目的根目录中，根本找不到这个打包好的bundle.js文件`
+      - `6. 我们可以认为 webpack-dev-server 把打包好的文件以一种虚拟的形式托管到了我们项目的根目录中，虽然看不懂，但是可以认为和dist src node_module平级，有一个看不进的文件叫做 bundle.js`
