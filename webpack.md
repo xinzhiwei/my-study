@@ -5,7 +5,7 @@
    ## 切换后 再使用npm install 下载的话，直接就会从你设置的地址下载
    ## nrm只是单纯的提供了几个常用的 下载包URL地址，并能够让在这几个地址之间进行切换，但是我们每次装包的时候，使用的装包感觉都是npm
 
-## 2.webpack学习
+## 2.webpack学习  webpcak中带s的都是数字，(exports除外)
    + `webpack: 是前端的一个项目构建工具，它是基于Node.js开发出来的一个前端工具  webpack是基于整个项目镜像构建的，（Gulp是基于task任务的，使用与小一点的项目）`
    + `安装webpack 1.全局安装  npm i webpack -g  2.在项目跟目录中运行 npm i webpack --save-dev`
    - `src 源文件目录  dist：发布完成后的产品级内容  main.js文件是项目js的入口文件`
@@ -30,7 +30,14 @@
       - `5. webpack-dev-server 帮我们打包生成的bundle.js 文件并没有存放到实际的物理磁盘上面，而是直接托管到了电脑的内存中，所以我们在项目的根目录中，根本找不到这个打包好的bundle.js文件`
       - `6. 我们可以认为 webpack-dev-server 把打包好的文件以一种虚拟的形式托管到了我们项目的根目录中，虽然看不懂，但是可以认为和dist src node_module平级，有一个看不进的文件叫做 bundle.js`
 
-  ## 如何设置执行npm run dev命令
+  ## 设置dev-server命令参数
     - `1.在package.json文件中的"scripts"：{} 内新加"dev": "webpack-dev-server" 即可 webpack-dev-server后还可以设置自动打开浏览器"dev": "webpack-dev-server --open"，和默认端口号"dev": "webpack-dev-server --port 3000" 设置默认的打开页面（根路径）"dev": "webpack-dev-server --contentBase src"` 
     - `2."dev": "webpack-dev-server --open --port 3000 --contentBase src" 表示执行npm命令后，会自动打开浏览器，默认端口为3000，默认打开根路径为src` 
     - `3. 热更新(热重载)加--hot "dev": "webpack-dev-server --open --port 3000 --contentBase src --hot" 作用1.不重载，页面不刷新即可更新页面内容 2.打包后更改内容不会重新打包而是生成补丁`  
+
+    ## 设置dev-server方法二
+    - `在webpack.config.js文件中的module.exports={} 对象中新建参数即可`
+    - `1.设置自动打开浏览器 open: true`
+    - `2.port: 3000, 设置启动时候的运行端口`
+    - `3.contentBase: "src",  指定托管的根目录`
+    - `4.hot: true     启用热更新` 
