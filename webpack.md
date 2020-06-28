@@ -41,3 +41,12 @@
     - `2.port: 3000, 设置启动时候的运行端口`
     - `3.contentBase: "src",  指定托管的根目录`
     - `4.hot: true     启用热更新` 
+
+  ##  把页面放在缓存内 html-webpack-plugin  
+    - `1.安装插件 cnpm i html-webpack-plugin -D`
+    - `2.在配置文件webpack.config.js中导入插件 const HtmlWebpackPlugin = require('html-webpack-plugin')`
+    - `3. 在plugins数组中穿件一个在内存中生成html页面的插件 new HtmlWebpackPlugin({ template: path.join(__dirname: './src/index.html') // 指定模板页面，将来会根据指定的页面路径去生成内存中的页面, filename: 'index.html' // 指定生成的页面的名称})`
+    - `4.当我们使用了html-webpack-plugin后，我们不需要手动处理 bundle.js的引用路径了，因为该插件已经帮我们自动创建了一个script，并引用了正确的路径`
+
+    ## html-webpack-plugin 插件作用
+    ## 1. 自动在内存中根据指定页面生成一个内存的页面 2. 自动把打包好的 bundle.js 追加到页面中去

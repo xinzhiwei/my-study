@@ -3,6 +3,7 @@ const path = require("path");  // 路径操作node中要使用path模块
 // 启用热更新的第二部
 // const webpack = require("webpack");
 // node的语法
+const htmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
    // 手动指定入口和出口文件
    entry: path.join(__dirname,"./src/main.js"), // 入口，表示要使用webpack打包那个文件
@@ -17,6 +18,10 @@ module.exports = {
       hot: true     // 启用热更新的第一步
    },
    plugins: [
-      new webpack.HotModuleReplacementPlugin() // new一个热更新的模块对象， 这是启用热更新的第三步
+      new webpack.HotModuleReplacementPlugin(), // new一个热更新的模块对象， 这是启用热更新的第三步
+      new htmlWebpackPlugin({ // 创建一个在内存中生成的HTML页面的插件
+         template: path.join(__dirname, "./src/index.html"), // 指定模板页面 将来会根据指定的页面路径 去生成内存中的页面
+         filename: 'index.html'  // 指定生成的页面的名称
+      })
    ]*/
 }
